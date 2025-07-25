@@ -1,0 +1,417 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+     background: #282828;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(./img/preloader-cover.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#preloader::before {
+    content: "";
+    position: absolute;
+    background-image: url(./img/preloader-man.png);
+    width: 717px;
+    height: 590px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.preloader-bar {
+    position: relative;
+    width: 300px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+}
+
+.preloader-icon {
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    animation: moveRight 3s linear forwards;
+}
+
+.preloader-bar {
+    position: relative;
+    max-width: 301px;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to right, #070334DB, #130e4bdb, #070334DB);
+    border-radius: 50px;
+}
+
+.preloader-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(to right, #403694db, #5147aadb, #383368db);
+    animation: fillBar 1.5s linear forwards;
+    border-radius: 50px 0 0 50px;
+    z-index: 1;
+}
+
+.preloader-icon {
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 120px;
+    height: 120px;
+    animation: moveRight 1.5s linear forwards;
+    animation-delay: 0.2s;
+    z-index: 2;
+}
+
+@keyframes moveRight {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: 120%;
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes moveRight {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: 120%;
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes fillBar {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 90%;
+    }
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+
+.bigger_game_canvas {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+
+}
+
+.bigger_game {
+    position: relative;
+    background-image: url(./img/bigger-cover.png);
+    width: 717px;
+    height: 590px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bigger_game {
+    position: relative;
+    width: 960px;
+    height: 790px;
+    background-image: url(./img/bigger-cover.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.bigger_game::after {
+    content: "";
+    position: absolute;
+    background-image: url(./img/bigger-logo.png);
+    left: 10px;
+    top: 15px;
+    width: 200px;
+    height: 140px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 5;
+}
+
+
+
+.bigger_game::before {
+    content: "";
+    position: absolute;
+    background-image: url(./img/fisher-man.png);
+    right: 0;
+    top: 0;
+    width: 350px;
+    height: 405px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: revert-layer;
+}
+
+.bigger_counter {
+
+
+
+    font-family: "Titan One", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    width: 255px;
+    height: 60px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    z-index: 15;
+}
+
+.bigger_counter::before {
+    content: "";
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+    background-image: url(./img/bigger-counter.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: -1;
+
+}
+
+.bigger_btn {
+
+    font-family: "Sigmar One", sans-serif;
+    font-style: normal;
+    color: rgb(255, 255, 255);
+    font-family: Sigmar One;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 246px;
+    letter-spacing: 0%;
+    text-align: center;
+    position: relative;
+    width: 190px;
+    height: 100px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.bigger_btn::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(./img/bigger-btn.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: -1;
+
+}
+
+.bigger_game_machine {
+    position: relative;
+    background-image: url(./img/bigger-cov.png);
+    padding: 75px 85px 90px 80px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+
+.reel-grid {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    gap: 35px;
+}
+
+.reel {
+    width: 33%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.reel img {
+    width: 100%;
+    height: 116px;
+    object-fit: contain;
+    margin-bottom: 2px;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #130121CC;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+}
+
+.modal-content {
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.modal-content>img {
+    width: 100%;
+    height: 100%;
+    max-height: 630px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.close-btn {
+    font-size: 30px;
+    color: #000;
+    cursor: pointer;
+}
+
+.activate-btn {
+    margin-top: 15px;
+    padding: 12px 30px;
+    font-size: 20px;
+    font-family: "Sigmar One", sans-serif;
+    background: linear-gradient(to bottom, #fca311, #f77f00);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s;
+}
+
+.activate-btn:hover {
+    background: linear-gradient(to bottom, #f77f00, #d62828);
+}
+
+@media (max-width: 991px) {
+    .modal-content>img {
+        max-height: 900px;
+    }
+
+    .bigger_game {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    .bigger_game_machine {
+        padding: 40px;
+    }
+}
