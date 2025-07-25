@@ -402,7 +402,7 @@ table {
 
 @media (max-width: 991px) {
     .modal-content>img {
-        max-height: 900px;
+        max-height: 535px;
     }
 
     .bigger_game {
